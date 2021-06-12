@@ -1,16 +1,14 @@
 const myName = 'miguel';
-
 const myAge = 12;
-
 const suma = (a: number, b: number) => {
   return a + b;
 };
-
-suma(12, 22);
-
-class Person {
+suma(12, 23);
+class Persona {
   constructor(private age: number, private name: string) {}
   getSummary() {
-    return `I'm ${this.name} and I'm ${this.age}`;
+    return `my name is ${this.name}, ${this.age}`;
   }
 }
+const miguel = new Persona(15, 'miguel');
+miguel.getSummary();
