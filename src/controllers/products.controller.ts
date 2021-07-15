@@ -1,4 +1,4 @@
-import { Controller, Get, Query, Param } from '@nestjs/common';
+import { Controller, Get, Query, Param, Post, Body } from '@nestjs/common';
 
 @Controller('products') // 👈 Route
 export class ProductsController {
@@ -18,6 +18,14 @@ export class ProductsController {
 
   @Get(':productId')
   getProduct(@Param('productId') productId: string) {
-    return `product ${productId}`;
+    return { message: `product ${productId}` };
+  }
+
+  @Post() // 👈 New decorator
+  create(@Body() payload: any) {
+    return {
+      message: 'accion de crear',
+      payload,
+    };
   }
 }
