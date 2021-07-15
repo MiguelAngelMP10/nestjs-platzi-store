@@ -7,6 +7,8 @@ import {
   Body,
   Put,
   Delete,
+  HttpStatus,
+  HttpCode,
 } from '@nestjs/common';
 
 @Controller('products') // 👈 Route
@@ -26,8 +28,9 @@ export class ProductsController {
   }
 
   @Get(':productId')
+  @HttpCode(HttpStatus.ACCEPTED)
   getProduct(@Param('productId') productId: string) {
-    return { message: `product ${productId}` };
+    return { message: `product  ss ${productId}` };
   }
 
   @Post() // 👈 New decorator
