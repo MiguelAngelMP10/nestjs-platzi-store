@@ -9,8 +9,9 @@ import {
   Delete,
   HttpStatus,
   HttpCode,
-  ParseIntPipe,
+  //ParseIntPipe,
 } from '@nestjs/common';
+import { ParseIntPipe } from '../common/parse-int.pipe';
 
 import { ProductsService } from './../services/products.service';
 @Controller('products') // 👈 Route
