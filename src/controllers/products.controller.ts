@@ -11,6 +11,7 @@ import {
   HttpCode,
   //ParseIntPipe,
 } from '@nestjs/common';
+import { CreateProductDto, UpdateProductDto } from 'src/dtos/products.dtos';
 import { ParseIntPipe } from '../common/parse-int.pipe';
 
 import { ProductsService } from './../services/products.service';
@@ -42,7 +43,7 @@ export class ProductsController {
   }
 
   @Post() // 👈 New decorator
-  create(@Body() payload: any) {
+  create(@Body() payload: CreateProductDto) {
     // return {
     //   message: 'accion de crear',
     //   payload,
@@ -52,7 +53,7 @@ export class ProductsController {
   }
 
   @Put(':id')
-  update(@Param('id') id: number, @Body() payload: any) {
+  update(@Param('id') id: number, @Body() payload: UpdateProductDto) {
     // return {
     //   id,
     //   payload,
