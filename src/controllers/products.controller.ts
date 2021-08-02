@@ -48,6 +48,7 @@ export class ProductsController {
     //   message: 'accion de crear',
     //   payload,
     // };
+    console.log(payload);
 
     return this.productsService.create(payload);
   }
